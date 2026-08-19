@@ -4,8 +4,9 @@ import pytesseract
 from PIL import Image
 
 def preprocess_image(image: Image.Image) -> Image.Image: #preprocess for better result
+
     img = np.array(image.convert("RGB"))
-    gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
+    gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY) #grayscale 
 
     # upscale small images
     scale = 2

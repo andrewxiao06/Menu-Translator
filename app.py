@@ -18,7 +18,7 @@ st.caption(
 
 if not os.environ.get("OPENAI_API_KEY"):
     st.warning(
-        "No OPENAI_API_KEY found. Add it to `.streamlit/secrets.toml`", icon="⚠️")
+        "No OPENAI_API_KEY found.", icon="⚠️")
 
 image_file = st.camera_input("Take a photo of the menu")
 
@@ -42,13 +42,13 @@ if image_file is not None:
                 "better lighting, or move closer."
             )
         else:
-            with st.expander("Raw OCR text (debug)"):
+            with st.expander("Raw OCR text"):
                 st.text(raw_text)
 
             with st.spinner("Translating and explaining..."):
                 try:
                     dishes = translate_menu(raw_text)
-                except Exception as e:  # noqa: BLE001 - surface any API/parsing error to the UI
+                except Exception as e:  # send API/parsing error to the UI
                     st.error(f"Something went wrong calling OpenAI: {e}")
                     dishes = []
 
