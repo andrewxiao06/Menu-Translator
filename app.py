@@ -10,6 +10,22 @@ if "OPENAI_API_KEY" in st.secrets:
     os.environ.setdefault("OPENAI_API_KEY", st.secrets["OPENAI_API_KEY"])
 
 st.set_page_config(page_title="Menu Translator", page_icon="\U0001F37D️")
+
+st.markdown("""
+  <style>
+  [data-testid="stCameraInput"] > div:first-child {
+      aspect-ratio: 4 / 3 !important;
+  }
+
+  @media (max-width: 640px) {
+      [data-testid="stCameraInput"] > div:first-child {
+          aspect-ratio: 3 / 4 !important;
+      }
+  }
+  </style>
+  """, unsafe_allow_html=True)
+
+
 st.title("\U0001F37D️ Menu Translator")
 st.caption(
     "Snap a photo of a foreign menu. Get the dish name, the translation, "
