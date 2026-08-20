@@ -35,6 +35,7 @@ def translate_menu(raw_text: str, api_key: str | None = None) -> list[dict]:
     response = client.chat.completions.create(
         model=MODEL,
         response_format={"type": "json_object"},
+        temperature=0,
         messages=[
             {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user", "content": raw_text},

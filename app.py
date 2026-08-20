@@ -36,7 +36,7 @@ if not os.environ.get("OPENAI_API_KEY"):
     st.warning(
         "No OPENAI_API_KEY found.", icon="⚠️")
 
-image_file = st.camera_input("Take a photo of the menu")
+image_file = st.camera_input("Take a photo of the menu", resolution = "1080p")
 
 if image_file is None:
     st.caption("No camera? Upload a photo instead:")
