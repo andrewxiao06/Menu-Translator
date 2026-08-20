@@ -5,23 +5,24 @@ from PIL import Image
 
 def preprocess_image(image: Image.Image) -> Image.Image: #preprocess for better result
 
-    img = np.array(image.convert("RGB"))
-    gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY) #grayscale 
+    # img = np.array(image.convert("RGB"))
+    # gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY) #grayscale 
 
-    # upscale small images
-    scale = 2
-    gray = cv2.resize(gray, None, fx=scale, fy=scale, interpolation=cv2.INTER_CUBIC)
+    # # upscale small images
+    # scale = 2
+    # gray = cv2.resize(gray, None, fx=scale, fy=scale, interpolation=cv2.INTER_CUBIC)
 
-    thresh = cv2.adaptiveThreshold(
-        gray,
-        255,
-        cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
-        cv2.THRESH_BINARY,
-        31,
-        15,
-    )
+    # thresh = cv2.adaptiveThreshold(
+    #     gray,
+    #     255,
+    #     cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
+    #     cv2.THRESH_BINARY,
+    #     31,
+    #     15,
+    # )
 
-    return Image.fromarray(thresh)
+    # return Image.fromarray(thresh)
+    return Image
 
 
 def extract_text(image: Image.Image, lang: str = "eng+dan+deu") -> str:
