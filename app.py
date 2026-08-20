@@ -1,7 +1,7 @@
 import os
 
 import streamlit as st
-from PIL import Image
+from PIL import Image, ImageOps
 
 from ocr import extract_text
 from translator import translate_menu
@@ -29,7 +29,7 @@ if image_file is None:
     )
 
 if image_file is not None:
-    image = Image.open(image_file)
+    image = ImageOps.exif_transpose(Image.open(image_file))
     st.image(image, caption="Captured menu", use_container_width=True)
 
     if st.button("Translate menu", type="primary"):
