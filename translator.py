@@ -3,7 +3,7 @@ import os
 
 from openai import OpenAI
 
-MODEL = "gpt-4o-mini"
+MODEL = "gpt-5.6-luna" 
 
 SYSTEM_PROMPT = """You are reading raw, possibly noisy OCR text extracted from a \
 photograph of a restaurant menu. The menu may be in any language and the OCR \
