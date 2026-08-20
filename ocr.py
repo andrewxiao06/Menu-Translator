@@ -24,6 +24,6 @@ def preprocess_image(image: Image.Image) -> Image.Image: #preprocess for better 
     return Image.fromarray(thresh)
 
 
-def extract_text(image: Image.Image, lang: str = "eng") -> str:
+def extract_text(image: Image.Image, lang: str = "eng+dan+deu+chi_sim") -> str:
     processed = preprocess_image(image)
     return pytesseract.image_to_string(processed, lang=lang)

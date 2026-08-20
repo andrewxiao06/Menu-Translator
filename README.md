@@ -41,3 +41,7 @@ Use French, Spanish, or Italian where Tesseract is much more reliable.
 - **v1 is English-OCR-only** (`lang="eng"` in `ocr.py::extract_text`). To
   read non-Latin menus you need the matching Tesseract language pack
   installed
+
+THEN
+
+Deploy onto Streamlit Community and link it to your github account so you can use this on your phone with a live website url

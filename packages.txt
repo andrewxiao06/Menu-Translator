@@ -1,1 +1,5 @@
 tesseract-ocr
+tesseract-ocr-dan
+tesseract-ocr-deu
+tesseract-ocr-chi-sim
+tesseract-ocr-chi-tra
